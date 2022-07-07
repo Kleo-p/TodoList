@@ -92,3 +92,23 @@ li:hover {
   position: absolute;
   right: 30px;
 }
+
+.chec {
+  text-decoration: line-through;
+  color: aliceblue;
+}
+.foota{
+  display: flex;
+  justify-content: space-between;
+}
+#clr{
+  color: rgb(243, 240, 88);
+  background-color: rgb(185, 10, 10);
+  cursor: pointer;
+  border: none;
+  padding: 5px;
+  border-radius: 12px;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 15px;
+  box-shadow: 1px 1px 2px 2px rgb(83, 31, 31);
+}

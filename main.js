@@ -4,6 +4,10 @@ let ull = document.getElementById("ull");
 let inp = document.getElementById("inp");
 let btn = document.getElementById("btn");
 let utask = document.getElementById("utask");
+let clr = document.getElementById("clr");
+// const cbxs = document.querySelectorAll(".cbx");
+
+let chec = document.querySelector(".chec");
 let eli = document.getElementsByClassName("eli");
 
 // defaul and when page loads
@@ -12,7 +16,7 @@ let arr = JSON.parse(localStorage.getItem("todo")) || [];
 let show = function () {
   let lii = "";
   arr.forEach((element, index) => {
-    lii += `<li class ="eli"> ${element} <span onclick="delet(${index})";><i class="fas" >&#xf014;</i></span></li>`;
+    lii += `<li class ="eli"><input class="cbx" type="checkbox"> ${element} <span onclick="delet(${index})";><i class="fas" >&#xf014;</i></span></li>`;
   });
   ull.innerHTML = lii;
 
@@ -48,3 +52,11 @@ function delet(index) {
 //   console.log(typeof(don));
 //   don.style.color = "red";
 // }
+clr.addEventListener("click", clear);
+
+function clear() {
+  arr = JSON.parse(localStorage.getItem("todo"));
+  arr = [];
+  localStorage.setItem("todo", JSON.stringify(arr));
+  show();
+}
